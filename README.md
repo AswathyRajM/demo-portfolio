@@ -1,4 +1,4 @@
 # Website HTML-CSS
 
 ## How to Run
-Downloaod the files and open in a web browswer
+Downloaod the files and open index.html in a web browswer
