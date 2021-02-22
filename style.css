@@ -95,23 +95,23 @@
      left: 0;
      top: 0;
      width: 100vw;
+     height: auto;
  }
 
  #header .header {
      min-height: 8vh;
      background-color: rgba(31, 30, 30, 0.24);
-     /* I've added this */
-     overflow-y: hidden;
+     transition: .3s ease background-color;
  }
 
  #header .nav-bar {
      display: flex;
      align-items: center;
-     justify-content: space-around;
+     justify-content: space-between;
      width: 100%;
      height: 100%;
      max-width: 1300px;
-     padding: 0 10px
+     padding: 0 10px;
  }
 
  #header .nav-list ul {
@@ -120,7 +120,7 @@
      background-color: rgb(31, 30, 30);
      width: 100vw;
      height: 100vh;
-     left: 0%;
+     left: 100%;
      top: 0;
      display: flex;
      flex-direction: column;
@@ -128,7 +128,11 @@
      align-items: center;
      z-index: 1;
      overflow-x: hidden;
+     transition: .5s ease left;
+ }
 
+ #header .nav-list ul.active {
+     left: 0%;
  }
 
  #header .nav-list ul a {
@@ -137,9 +141,9 @@
      letter-spacing: .2rem;
      text-decoration: none;
      color: white;
+     text-transform: uppercase;
      padding: 20px;
      display: block;
-     text-transform: uppercase;
  }
 
  #header .nav-list ul a::after {
@@ -148,8 +152,8 @@
      top: 50%;
      left: 50%;
      transform: translate(-50%, -50%) scale(0);
-     color: rgba(220, 20, 60, 0.12);
-     font-size: 11rem;
+     color: rgba(240, 248, 255, 0.021);
+     font-size: 13rem;
      letter-spacing: 50px;
      z-index: -1;
      transition: .3s ease letter-spacing;
@@ -160,18 +164,34 @@
      letter-spacing: initial;
  }
 
- /* Hamburger menu */
+ #header .nav-list ul li:hover a {
+     color: crimson;
+ }
+
  #header .hamburger {
      height: 60px;
      width: 60px;
-     display: flex;
+     display: inline-block;
      border: 3px solid white;
      border-radius: 50%;
      position: relative;
+     display: flex;
      align-items: center;
      justify-content: center;
-     cursor: pointer;
      z-index: 100;
+     cursor: pointer;
+     transform: scale(.8);
+     margin-right: 20px;
+ }
+
+ #header .hamburger:after {
+     position: absolute;
+     content: '';
+     height: 100%;
+     width: 100%;
+     border-radius: 50%;
+     border: 3px solid white;
+     animation: hamburger_puls 1s ease infinite;
  }
 
  #header .hamburger .bar {
@@ -189,7 +209,6 @@
      height: 100%;
      width: 100%;
      left: 0;
-     right: 0;
      background-color: white;
      transition: .3s ease;
      transition-property: top, bottom;
@@ -201,6 +220,14 @@
 
  #header .hamburger .bar::before {
      bottom: 8px;
+ }
+
+ #header .hamburger.active .bar::before {
+     bottom: 0;
+ }
+
+ #header .hamburger.active .bar::after {
+     top: 0;
  }
 
  /* End of Hamburger menu */
