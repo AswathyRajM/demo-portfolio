@@ -1,12 +1,6 @@
-# Website HTML-CSS
+# Portfolio
 
-## Lanugages used
-
-#### HTML
-
-#### CSS
-
-#### Javscript
+It is developed using HTML,CSS and JavaScript
 
 ## How to Run
 
